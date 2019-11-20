@@ -1,4 +1,27 @@
+.container{
+    overflow:hidden;
+    height: 800px;
+    width: 1920px;
+
+}
+
 .box{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 500%;
+    padding: 40px;
     height: 30px;
     width: 30px;
+}
+.box2{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 500%;
+    padding: 40px;
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+}
+
+.text{
+    display: inline-block;
+    padding: 30px;
 }
