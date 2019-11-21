@@ -1,3 +1,7 @@
+#lock{
+    border: 1px solid black;
+}
+
 .container{
     overflow:hidden;
     height: 800px;
@@ -25,13 +29,45 @@
     display: inline-block;
     padding: 30px;
 }
+/* for smaller screen */
+@media screen and (max-width: 970px) {
+.box{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 200%;
+    padding: 40px;
+    height: 30px;
+    width: 30px;
+}
 
+.box2{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 200%;
+    padding: 40px;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+
+.text{
+    display: inline-block;
+    padding: 20px;
+}
+
+.container{
+    overflow:hidden;
+    margin-top: 50px;
+    height: 600px;
+    width: 1920px;
+
+}
+    
+/* for mobile */
 @media screen and (max-width: 600px) {
 
 
 #lock{
     visibility: hidden;
-    
+
 }
 
 }

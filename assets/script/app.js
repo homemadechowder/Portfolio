@@ -1,5 +1,10 @@
 
+var unlock = "";
+var unlock2 = "";
+
 $(document).ready(function(){
+    $("#main").hide();
+    
     var letter = $(".box");
     var letter2 = $(".box2");
     var audio = new Audio("./assets/sounds/ding.wav");
@@ -7,28 +12,33 @@ $(document).ready(function(){
     //Obtain Mouse Scroll Information up or down
     window.addEventListener("wheel", event => {
         const delta = Math.sign(event.deltaY);
-        var unlock = $(".box").attr("style");
-        var unlock2 = $(".box2").attr("style");
-        
-
+      
+    
         console.log(delta);
-        console.log(unlock);
-        console.log(unlock2);
+        
         if (delta == -1){
             letter.animate({ top: "-=100px" }, "normal");
             letter2.animate({ top: "+=100px" }, "normal");
+
         }
         else if (delta == 1){
             letter.animate({ top: "+=100px" }, "normal");
             letter2.animate({ top: "-=100px" }, "normal");
-        }
 
-        if (unlock == "top: 200px;" && unlock2 == "top: 320px;"){
+        }
+    
+        unlock = $(".box").attr("style");
+        unlock2 = $(".box2").attr("style");
+        console.log(unlock);
+        console.log(unlock2);
+
+        if (unlock == "top: 200px;"&& unlock2 == "top: 320px;"){
             console.log("unlocked");
             letter.fadeOut("slow");
             letter2.fadeOut("slow");
             audio.play();
-            $("#id").hide();
+            
+            setTimeout(function(){$("#lock").hide();$("#main").fadeIn("slow");},1000);
             
         }
     });
