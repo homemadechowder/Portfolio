@@ -4,6 +4,8 @@ var unlock2 = "";
 var lockFlag = false;
 var border = document.getElementById("border");
 var border2 = document.getElementById("border2");
+var mobile = window.matchMedia("max-width:600px");
+
 
 $(document).ready(function(){
 //Entrance page overlay
@@ -11,6 +13,9 @@ $(document).ready(function(){
     $("#border").hide();
     $("#border2").hide();
     
+    if (mobile.matches){
+        $("main").show();
+    }
 
     var letter = $(".box");
     var letter2 = $(".box2");
