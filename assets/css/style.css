@@ -88,6 +88,7 @@
     background: black;
         transition: width 1s ease; 
 }
+}
 
 @media screen and (max-width: 767px) {
     .box{
@@ -117,7 +118,7 @@
         margin-top: 50px;
         
         height: 600px;
-        width: 1920px;
+        width: 767px;
     
     }
     
@@ -129,12 +130,21 @@
         background: black;
             transition: width 1s ease; 
     }
+}
 /* for mobile */
 @media screen and (max-width: 600px) {
 
 
 #lock{
     visibility: hidden;
+
+}
+.container{
+    overflow:hidden;
+    margin-top: 50px;
+    
+    height: 600px;
+    width: 600px;
 
 }
 

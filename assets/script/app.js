@@ -19,15 +19,14 @@ $(document).ready(function(){
     //Obtain Mouse Scroll Information up or down
     window.addEventListener("wheel", event => {
         const delta = Math.sign(event.deltaY);
-      
-    
         console.log(delta);
-        
+        //if scrolling up 
         if (delta == -1){
             letter.animate({ top: "-=100px" }, "normal");
             letter2.animate({ top: "+=100px" }, "normal");
 
         }
+        //if scrolling down
         else if (delta == 1){
             letter.animate({ top: "+=100px" }, "normal");
             letter2.animate({ top: "-=100px" }, "normal");
