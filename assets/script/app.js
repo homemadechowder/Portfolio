@@ -4,7 +4,7 @@ var unlock2 = "";
 var lockFlag = false;
 var border = document.getElementById("border");
 var border2 = document.getElementById("border2");
-var mobile = window.matchMedia("max-width:600px");
+var mobile = window.matchMedia("(max-width: 600px)");
 
 
 $(document).ready(function(){
@@ -13,16 +13,31 @@ $(document).ready(function(){
     $("#border").hide();
     $("#border2").hide();
     
-    if (mobile.matches){
-        $("main").show();
-    }
+   
 
     var letter = $(".box");
     var letter2 = $(".box2");
     var audio = new Audio("./assets/sounds/ding.wav");
-    letter.click ();
+   
     //Obtain Mouse Scroll Information up or down
-    window.addEventListener("wheel", event => {
+    if (mobile.matches){
+        
+        var width = document.getElementById("lock").offsetWidth;
+        $(".space").hide();
+        $("#border").show();
+        $("#border2").show();
+        //Scaled width
+        $("#border").animate({width: width+"px"},100);
+        $("#border2").animate({width: width+"px"},100);
+        letter.animate({top:"300px"},"normal");
+        letter2.animate({top: "220px"}, "normal");
+        console.log("mobile");
+    }
+
+    
+    else{
+    
+        window.addEventListener("wheel", event => {
         const delta = Math.sign(event.deltaY);
         console.log(delta);
         //if scrolling up 
@@ -78,9 +93,10 @@ $(document).ready(function(){
            
             audio.play();
         });
-
+        
     //End of Entrance page************************************************
-    });
+});
+}
 
     
     
