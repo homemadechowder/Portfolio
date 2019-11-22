@@ -32,6 +32,23 @@ $(document).ready(function(){
         letter.animate({top:"300px"},"normal");
         letter2.animate({top: "220px"}, "normal");
         console.log("mobile");
+        
+            setTimeout(function(){
+                letter.fadeOut("slow");
+                letter2.fadeOut("slow");
+                $("#border").fadeOut("slow");
+                $("#border2").fadeOut("slow");
+                
+            },700);
+                       
+            setTimeout(function(){
+                $("#lock").hide();
+                $("#main").fadeIn("slow");
+            },1200);
+
+           
+            
+      
     }
 
     
