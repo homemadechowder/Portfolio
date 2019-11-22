@@ -1,10 +1,17 @@
 
 var unlock = "";
 var unlock2 = "";
+var lockFlag = false;
+var border = document.getElementById("border");
+var border2 = document.getElementById("border2");
 
 $(document).ready(function(){
+//Entrance page overlay
     $("#main").hide();
+    $("#border").hide();
+    $("#border2").hide();
     
+
     var letter = $(".box");
     var letter2 = $(".box2");
     var audio = new Audio("./assets/sounds/ding.wav");
@@ -29,18 +36,46 @@ $(document).ready(function(){
     
         unlock = $(".box").attr("style");
         unlock2 = $(".box2").attr("style");
-        console.log(unlock);
-        console.log(unlock2);
+        // console.log(unlock);
+        // console.log(unlock2);
+
+        //Honestly I'm pretty big brained, but to scale I just get width yeehaw
+        var width = document.getElementById("lock").offsetWidth;
+        // console.log(width);
 
         if (unlock == "top: 200px;"&& unlock2 == "top: 320px;"){
             console.log("unlocked");
-            letter.fadeOut("slow");
-            letter2.fadeOut("slow");
-            audio.play();
-            
-            setTimeout(function(){$("#lock").hide();$("#main").fadeIn("slow");},1000);
+            $("#border").show();
+            $("#border2").show();
+            //Scaled width
+            $("#border").animate({width: width+"px"},100);
+            $("#border2").animate({width: width+"px"},100);
+            lockFlag = true;
+           
             
         }
+
+      
+        
+        border.addEventListener("transitionend", function(){
+            setTimeout(function(){
+                letter.fadeOut("slow");
+                letter2.fadeOut("slow");
+                $("#border").fadeOut("slow");
+                $("#border2").fadeOut("slow");
+                
+            },700);
+                       
+            setTimeout(function(){
+                $("#lock").hide();
+                $("#main").fadeIn("slow");
+            },1200);
+
+           
+            audio.play();
+        });
+
+    //End of Entrance page************************************************
     });
 
     

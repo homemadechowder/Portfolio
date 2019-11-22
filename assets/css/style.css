@@ -1,5 +1,20 @@
-#lock{
+#border{
     border: 1px solid black;
+    margin-top: 10rem;
+    width: 6px;
+    height: 6px;
+    background: black;
+        transition: width 1s ease; 
+ 
+}
+#border2{
+    border: 1px solid black;
+    margin-top: 22rem;
+    width: 6px;
+    height: 6px;
+    background: black;
+        transition: width 1s ease; 
+   
 }
 
 .container{
@@ -29,14 +44,17 @@
     display: inline-block;
     padding: 30px;
 }
-/* for smaller screen */
-@media screen and (max-width: 970px) {
+
+
+/* for smaller screen 970px */
+@media screen and (max-width: 1270px) {
 .box{
     font-family: 'Bebas Neue', cursive;
     font-size: 200%;
     padding: 40px;
     height: 30px;
     width: 30px;
+    margin-left: 100px;
 }
 
 .box2{
@@ -45,7 +63,7 @@
     padding: 40px;
     height: 30px;
     width: 30px;
-    margin-left: 10px;
+    margin-left: 110px;
 }
 
 .text{
@@ -56,11 +74,61 @@
 .container{
     overflow:hidden;
     margin-top: 50px;
+    
     height: 600px;
     width: 1920px;
 
 }
+
+#border2{
+    border: 1px solid black;
+    margin-top: 17rem;
+    width: 6px;
+    height: 6px;
+    background: black;
+        transition: width 1s ease; 
+}
+
+@media screen and (max-width: 767px) {
+    .box{
+        font-family: 'Bebas Neue', cursive;
+        font-size: 100%;
+        padding: 40px;
+        height: 30px;
+        width: 30px;
+    }
     
+    .box2{
+        font-family: 'Bebas Neue', cursive;
+        font-size: 200%;
+        padding: 40px;
+        height: 30px;
+        width: 30px;
+        margin-left: 10px;
+    }
+    
+    .text{
+        display: inline-block;
+        padding: 10px;
+    }
+    
+    .container{
+        overflow:hidden;
+        margin-top: 50px;
+        
+        height: 600px;
+        width: 1920px;
+    
+    }
+    
+    #border2{
+        border: 1px solid black;
+        margin-top: 17rem;
+        width: 6px;
+        height: 6px;
+        background: black;
+            transition: width 1s ease; 
+    }
 /* for mobile */
 @media screen and (max-width: 600px) {
 
