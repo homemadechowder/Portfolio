@@ -22,7 +22,7 @@ $(document).ready(function(){
    
     if (mobile.matches){
         
-        $("main").show();
+        $("#main").show();
            
             
       
@@ -61,7 +61,8 @@ $(document).ready(function(){
             //Scaled width
             $("#border").animate({width: width+"px"},100);
             $("#border2").animate({width: width+"px"},100);
-            lockFlag = true;
+            
+            audio.play();
            
             
         }
@@ -83,7 +84,7 @@ $(document).ready(function(){
             },1200);
 
            
-            audio.play();
+           
         });
         
     //End of Entrance page************************************************
