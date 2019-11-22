@@ -134,7 +134,9 @@
 /* for mobile */
 @media screen and (max-width: 600px) {
 
-
+#lock{
+    visibility: hidden;
+}
 
 .container{
     overflow:hidden;

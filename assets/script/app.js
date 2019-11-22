@@ -19,41 +19,16 @@ $(document).ready(function(){
     var letter2 = $(".box2");
     var audio = new Audio("./assets/sounds/ding.wav");
    
-    //Obtain Mouse Scroll Information up or down
+   
     if (mobile.matches){
         
-        var width = document.getElementById("lock").offsetWidth;
-        $(".space").hide();
-        $("#border").show();
-        $("#border2").show();
-        //Scaled width
-        $("#border").animate({width: width+"px"},100);
-        $("#border2").animate({width: width+"px"},100);
-        letter.animate({top:"300px"},"normal");
-        letter2.animate({top: "220px"}, "normal");
-        console.log("mobile");
-        
-            setTimeout(function(){
-                letter.fadeOut("slow");
-                letter2.fadeOut("slow");
-                $("#border").fadeOut("slow");
-                $("#border2").fadeOut("slow");
-                
-            },700);
-                       
-            setTimeout(function(){
-                $("#lock").hide();
-                $("#main").fadeIn("slow");
-            },1200);
-
+        $("main").show();
            
             
       
     }
 
-    
-    else{
-    
+        //Obtain Mouse Scroll Information up or down
         window.addEventListener("wheel", event => {
         const delta = Math.sign(event.deltaY);
         console.log(delta);
@@ -113,7 +88,7 @@ $(document).ready(function(){
         
     //End of Entrance page************************************************
 });
-}
+
 
     
     
