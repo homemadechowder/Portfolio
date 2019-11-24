@@ -97,15 +97,6 @@
     padding: 20px;
 }
 
-.container{
-    overflow:hidden;
-    margin-top: 50px;
-    
-    height: 800px;
-    width: 1920px;
-
-}
-
 #border2{
     border: 1px solid black;
     margin-top: 17rem;
@@ -139,14 +130,6 @@
         padding: 10px;
     }
     
-    .container{
-        overflow:hidden;
-        margin-top: 50px;
-        
-        height: 600px;
-        width: 767px;
-    
-    }
     
     #border2{
         border: 1px solid black;
