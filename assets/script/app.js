@@ -1,9 +1,12 @@
 
 var unlock = "";
 var unlock2 = "";
+var limit = [];
+var limit2 = [];
 var lockFlag = false;
 var border = document.getElementById("border");
 var border2 = document.getElementById("border2");
+var line = document.querySelector(".box");
 var mobile = window.matchMedia("(max-width: 600px)");
 
 //Links to github deployment and projects:
@@ -30,44 +33,13 @@ $(document).ready(function(){
         $("#main").show();     
             
     }
-        $(".box").trigger('click');
+        letter.trigger('click');
         //Obtain Mouse Scroll Information up or down
-        
-        $(window).bind('mousewheel', function(e){
-            if(e.originalEvent.wheelDelta /120 > 0) {
-                console.log('scrolling up !');
-                letter.animate({ top: "-=100px" }, "normal");
-                letter2.animate({ top: "+=100px" }, "normal");
-            }
-            else{
-                console.log('scrolling down !');
-                letter.animate({ top: "+=100px" }, "normal");
-                letter2.animate({ top: "-=100px" }, "normal");
-            }
-       
-        
-        // window.addEventListener("wheel", {{wheel: { behavior: 'throttle', delay: 100 } },event => {
-        
-        // console.log(event.deltaY);
-        // const delta = Math.sign(event.deltaY);
-        // console.log(delta);
-        
-        
-        
-        
-        // //if scrolling up 
-        // if (delta == -1 && lockFlag == false){
-        //     letter.animate({ top: "-=100px" }, "normal");
-        //     letter2.animate({ top: "+=100px" }, "normal");
 
-        // }
-        // //if scrolling down
-        // else if (delta == 1 && lockFlag == false){
-        //     letter.animate({ top: "+=100px" }, "normal");
-        //     letter2.animate({ top: "-=100px" }, "normal");
-
-        // }
-    
+        window.addEventListener("wheel", event => {
+        
+        const delta = Math.sign(event.deltaY);
+        console.log(delta);
         unlock = $(".box").attr("style");
         unlock2 = $(".box2").attr("style");
         // console.log(unlock);
@@ -76,11 +48,48 @@ $(document).ready(function(){
         //Honestly I'm pretty big brained, but to scale I just get width yeehaw
         var width = document.getElementById("lock").offsetWidth;
         //console.log(width);
-
-        if (unlock == "top: 200px;"&& unlock2 == "top: 320px;"){
+        
+        
+        
+        //if scrolling up 
+        if (delta == -1 && lockFlag == false){
+         
+            letter.animate({ top: "-=100px" }, "normal");
+            letter2.animate({ top: "+=100px" }, "normal");
+            
+        }
+        //if scrolling down
+        else if (delta == 1 && lockFlag == false){
+            
+            letter.animate({ top: "+=100px" }, "normal");
+            letter2.animate({ top: "-=100px" }, "normal");
+        }
+        
+        if (delta === 1){
+            limit.push(delta);
+        }
+        if (delta === -1){
+            limit2.push(delta);
+        }
+       
+        if (limit.length - limit2.length === 5){
+            lockFlag = true;
+            console.log("unlocked by flag");
+            console.log(unlock);
+            console.log(unlock2);
+            if (unlock == "top: 200px;"&& unlock2 == "top: 320px;"){
+                console.log("unlocked");
+                entrance();
+            }
+            else{
+                setTimeout(entrance, 1900);
+            }
+            
+        }
+        
+ 
+function entrance(){
             console.log("unlocked");
-            $(".box").attr("style", "top: 200px");
-            $(".box2").attr("style", "top: 320px");
             lockFlag = true;
             $("#border").show();
             $("#border2").show();
@@ -89,8 +98,7 @@ $(document).ready(function(){
             $("#border2").animate({width: width+"px"},100);
             
             audio.play();
-        }
-
+        
         border.addEventListener("transitionend", function(){
             setTimeout(function(){
                 letter.fadeOut("slow");
@@ -108,7 +116,10 @@ $(document).ready(function(){
            
            
         });
-        
+   
+    }
+    });  
+    
     //End of Entrance page************************************************
 
     var cards = $(".cards");
@@ -117,7 +128,7 @@ $(document).ready(function(){
         window.location = "http://google.com";
     })
    
-});
+
 
 
 
