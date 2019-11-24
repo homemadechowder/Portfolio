@@ -32,27 +32,41 @@ $(document).ready(function(){
     }
         $(".box").trigger('click');
         //Obtain Mouse Scroll Information up or down
-        window.addEventListener("wheel", event => {
         
-        console.log(event.deltaY);
-        const delta = Math.sign(event.deltaY);
-        console.log(delta);
+        $(window).bind('mousewheel', function(e){
+            if(e.originalEvent.wheelDelta /120 > 0) {
+                console.log('scrolling up !');
+                letter.animate({ top: "-=100px" }, "normal");
+                letter2.animate({ top: "+=100px" }, "normal");
+            }
+            else{
+                console.log('scrolling down !');
+                letter.animate({ top: "+=100px" }, "normal");
+                letter2.animate({ top: "-=100px" }, "normal");
+            }
+       
+        
+        // window.addEventListener("wheel", {{wheel: { behavior: 'throttle', delay: 100 } },event => {
+        
+        // console.log(event.deltaY);
+        // const delta = Math.sign(event.deltaY);
+        // console.log(delta);
         
         
         
         
-        //if scrolling up 
-        if (delta == -1 && lockFlag == false){
-            letter.animate({ top: "-=100px" }, "normal");
-            letter2.animate({ top: "+=100px" }, "normal");
+        // //if scrolling up 
+        // if (delta == -1 && lockFlag == false){
+        //     letter.animate({ top: "-=100px" }, "normal");
+        //     letter2.animate({ top: "+=100px" }, "normal");
 
-        }
-        //if scrolling down
-        else if (delta == 1 && lockFlag == false){
-            letter.animate({ top: "+=100px" }, "normal");
-            letter2.animate({ top: "-=100px" }, "normal");
+        // }
+        // //if scrolling down
+        // else if (delta == 1 && lockFlag == false){
+        //     letter.animate({ top: "+=100px" }, "normal");
+        //     letter2.animate({ top: "-=100px" }, "normal");
 
-        }
+        // }
     
         unlock = $(".box").attr("style");
         unlock2 = $(".box2").attr("style");
