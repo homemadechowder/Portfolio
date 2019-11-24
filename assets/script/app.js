@@ -30,19 +30,19 @@ $(document).ready(function(){
         $("#main").show();     
             
     }
-        $(".box").click();
+        $(".box").trigger('click');
         //Obtain Mouse Scroll Information up or down
         window.addEventListener("wheel", event => {
         const delta = Math.sign(event.deltaY);
         console.log(delta);
         //if scrolling up 
-        if (delta == -1){
+        if (delta == -1 && lockFlag == false){
             letter.animate({ top: "-=100px" }, "normal");
             letter2.animate({ top: "+=100px" }, "normal");
 
         }
         //if scrolling down
-        else if (delta == 1){
+        else if (delta == 1 && lockFlag == false){
             letter.animate({ top: "+=100px" }, "normal");
             letter2.animate({ top: "-=100px" }, "normal");
 
@@ -59,6 +59,9 @@ $(document).ready(function(){
 
         if (unlock == "top: 200px;"&& unlock2 == "top: 320px;"){
             console.log("unlocked");
+            $(".box").attr("style", "top: 200px");
+            $(".box2").attr("style", "top: 320px");
+            lockFlag = true;
             $("#border").show();
             $("#border2").show();
             //Scaled width
