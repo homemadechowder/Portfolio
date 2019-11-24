@@ -33,8 +33,14 @@ $(document).ready(function(){
         $(".box").trigger('click');
         //Obtain Mouse Scroll Information up or down
         window.addEventListener("wheel", event => {
+        
+        console.log(event.deltaY);
         const delta = Math.sign(event.deltaY);
         console.log(delta);
+        
+        
+        
+        
         //if scrolling up 
         if (delta == -1 && lockFlag == false){
             letter.animate({ top: "-=100px" }, "normal");
