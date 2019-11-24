@@ -26,6 +26,10 @@ $(document).ready(function(){
     
     var letter = $(".box");
     var letter2 = $(".box2");
+
+    letter.hide();
+    letter2.hide();
+
     var audio = new Audio("./assets/sounds/ding.wav");
       
     if (mobile.matches){
@@ -40,6 +44,9 @@ $(document).ready(function(){
         
         const delta = Math.sign(event.deltaY);
         console.log(delta);
+        letter.show();
+        letter2.show();
+        
         unlock = $(".box").attr("style");
         unlock2 = $(".box2").attr("style");
         // console.log(unlock);
@@ -79,6 +86,7 @@ $(document).ready(function(){
             console.log(unlock2);
             if (unlock == "top: 200px;"&& unlock2 == "top: 320px;"){
                 console.log("unlocked");
+                
                 entrance();
             }
             else{
@@ -91,6 +99,8 @@ $(document).ready(function(){
 function entrance(){
             console.log("unlocked");
             lockFlag = true;
+            letter.hide();
+            letter2.hide();
             $("#border").show();
             $("#border2").show();
             //Scaled width
