@@ -72,8 +72,8 @@
 }
 
 
-/* for smaller screen 1270px */
-@media screen and (max-width: 1270px) {
+/* for smaller screen 1070px */
+@media screen and (max-width: 1070px) {
 .box{
     font-family: 'Bebas Neue', cursive;
     font-size: 200%;
@@ -101,7 +101,7 @@
     overflow:hidden;
     margin-top: 50px;
     
-    height: 600px;
+    height: 800px;
     width: 1920px;
 
 }
