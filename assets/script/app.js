@@ -6,28 +6,31 @@ var border = document.getElementById("border");
 var border2 = document.getElementById("border2");
 var mobile = window.matchMedia("(max-width: 600px)");
 
+//Links to github deployment and projects:
+
+
+
+//End of section*******************************
+
 
 $(document).ready(function(){
 //Entrance page overlay
     $("#main").hide();
     $("#border").hide();
     $("#border2").hide();
-    
-   
 
+    
+    
     var letter = $(".box");
     var letter2 = $(".box2");
     var audio = new Audio("./assets/sounds/ding.wav");
-   
-   
-    if (mobile.matches){
-        
-        $("#main").show();
-           
-            
       
+    if (mobile.matches){
+        //Mobile doesn't work unfortunately so we removed it
+        $("#main").show();     
+            
     }
-
+        $(".box").click();
         //Obtain Mouse Scroll Information up or down
         window.addEventListener("wheel", event => {
         const delta = Math.sign(event.deltaY);
@@ -52,7 +55,7 @@ $(document).ready(function(){
 
         //Honestly I'm pretty big brained, but to scale I just get width yeehaw
         var width = document.getElementById("lock").offsetWidth;
-        // console.log(width);
+        //console.log(width);
 
         if (unlock == "top: 200px;"&& unlock2 == "top: 320px;"){
             console.log("unlocked");
@@ -63,12 +66,8 @@ $(document).ready(function(){
             $("#border2").animate({width: width+"px"},100);
             
             audio.play();
-           
-            
         }
 
-      
-        
         border.addEventListener("transitionend", function(){
             setTimeout(function(){
                 letter.fadeOut("slow");
@@ -88,7 +87,17 @@ $(document).ready(function(){
         });
         
     //End of Entrance page************************************************
+
+    var cards = $(".cards");
+
+    cards.click(function(){
+        window.location = "http://google.com";
+    })
+   
 });
+
+
+
 
 
     

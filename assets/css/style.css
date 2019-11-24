@@ -16,14 +16,40 @@
         transition: width 1s ease; 
    
 }
+.cards{
+    font-family: 'Bebas Neue', cursive;
+    height: 200px;
+    text-align: center;
+    transition: transform .2s;
+    z-index: 1;
+    
+}
 
-.container{
+.cards:hover{
+    background-color: white;
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    z-index: 2;
+}
+
+.resize_fit_center{
+    
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+   
+}
+.locks{
     overflow:hidden;
-    height: 800px;
+    height: 700px;
     width: 1920px;
 
 }
-
+.footer{
+    text-align: center;
+    vertical-align: middle;
+}
 .box{
     font-family: 'Bebas Neue', cursive;
     font-size: 500%;
@@ -46,7 +72,7 @@
 }
 
 
-/* for smaller screen 970px */
+/* for smaller screen 1270px */
 @media screen and (max-width: 1270px) {
 .box{
     font-family: 'Bebas Neue', cursive;
@@ -142,28 +168,8 @@
     overflow:hidden;
     margin-top: 50px;
     
-    height: 600px;
+    height: 100%;
     width: 600px;
 
 }
-/* .box{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 200%;
-    padding: 40px;
-    height: 30px;
-    width: 60%;
-    margin-left: 65px;
 }
-.box2{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 200%;
-    padding: 40px;
-    height: 30px;
-    width: 60%;
-    margin-left: 70px;
-}
-.text{
-    float:left;
-    padding: 10px;
-}
-} */
