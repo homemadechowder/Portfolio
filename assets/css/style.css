@@ -1,3 +1,8 @@
+.jumbotron{
+    background-color: #a8dedd ;
+
+}
+
 #border{
     border: 1px solid black;
     margin-top: 10rem;
@@ -53,11 +58,11 @@
 #sound{
     font-family: 'Bebas Neue', cursive;
 }
-.fas{
+.icon{
     transition: transform .2s; 
 }
 
-.fas:hover{
+.icon:hover{
     transform: scale(1.2);
 }
 .fab{

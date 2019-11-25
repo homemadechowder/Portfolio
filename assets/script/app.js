@@ -238,6 +238,19 @@ function entrance(){
             case "zombie":
                 window.open("https://github.com/homemadechowder/Zombie-JS/blob/master/zombiegame.js","_blank");
                 break;
+            case "nytsearch":
+                window.open("https://homemadechowder.github.io/NYTSearch/","_blank");
+                break;
+            case "timedquiz":
+                window.open("https://homemadechowder.github.io/Basic_Quiz-Timed-/","_blank");
+                break;
+            case "embed":
+                window.open("https://github.com/homemadechowder/Embedded-Interactive-Module-with-AWS","_blank");
+                break;
+            case "shallow":
+                window.open("https://github.com/homemadechowder/ShallowWaterSimulations","_blank");
+                break;
+                
         
             }
     });
