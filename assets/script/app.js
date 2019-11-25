@@ -20,6 +20,7 @@ var mobile = window.matchMedia("(max-width: 600px)");
 $(document).ready(function(){
 //Entrance page overlay
     $("#main").hide();
+    $(".contactForm").hide();
     $("#border").hide();
     $("#border2").hide();
 
@@ -153,14 +154,14 @@ function entrance(){
 
         switch(item){
             case "aboutme":
-                
+                aboutmePage();
                 break;
             case "portfolio":
                 
                 $(".pPage").show();
                 break;
             case "contactme":
-              
+                contactPage();
                 break;
             case "techdemo":
                
@@ -177,7 +178,7 @@ function entrance(){
     })
 
     button.click(function(){
-        
+        $(".pPage").hide();
         switch (item){
             case "aboutme":
                 cards.not($(".abtMe")).fadeIn("slow");
@@ -206,7 +207,7 @@ function entrance(){
 
     //Portfolio page links
     $(".pPage").click(function(){
-        
+        $(".contactForm").hide();
         var project = $(this).attr("id");
 
         switch (project){
@@ -217,15 +218,31 @@ function entrance(){
                 window.open("https://homemadechowder.github.io/Star_Wars_RPG/", "_blank");
                 break;
             case "giftas":
-                window.open("https://github.com/homemadechowder/GifTastic/","_blank");
+                window.open("https://homemadechowder.github.io/GifTastic/","_blank");
                 break;
             case "zombie":
-                window.open("https://homemadechowder.github.io/Zombie-JS/","_blank");
+                window.open("https://github.com/homemadechowder/Zombie-JS/blob/master/zombiegame.js","_blank");
                 break;
         
             }
     });
    
+
+    function contactPage(){
+        $(".display-4").text("Contact Me");
+        $(".contactForm").show();
+    }
+
+    var description = "With a Bachelor’s degree in Computer Engineering from U.C. Davis, I am focused on software and hardware engineering. I have in-depth education and training in computer programming and coding, object-oriented design (OOD), software testing and debugging, and working with hardware and software tools to ensure alignment with project goals. I excel at technical troubleshooting and problem solving as an analytical and critical thinker adept at solving problems, technical troubleshooting, and debugging. Moreover, I am a motivated and results-driven with the ability to quickly resolve identify and resolve issues.In addition, I excel at project and team collaboration with experience developing various games and software as part of a project team and as a team lead. I possess excellent cross-functional coordination skills as a team member at VMware. I have a talent for meeting deadlines, building relationships, and ensuring cross-functional communications. In sum, I possess an excellent combination of technical and communications knowledge with trilingual language skills, including fluency in English, Mandarin, and Japanese. I excel at quickly learning and applying new tools and technologies with the ability to work as a team and with little oversight as an independent worker."
+    function aboutmePage(){
+        $(".contactForm").hide();
+        $(".lead").text(description);
+    }
+
+
+    $(".fa-linkedin").click(function(){
+        window.open("https://www.linkedin.com/in/andrew-lu-2997b0109/","_blank");
+    })
 
 
 
