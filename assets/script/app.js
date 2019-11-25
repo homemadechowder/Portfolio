@@ -26,6 +26,14 @@ $(document).ready(function(){
 
     
     
+
+    var sound = $(".foot").prepend("<i class='fas fa-volume-mute'><p>Click to turn volume on</p></i>");
+
+    $(".fa-volume-mute").on("click", function(){
+        $(".fa-volume-mute").replaceWith("<i class='fas fa-volume-up'><p>Now Scroll!</p></i>");
+    })
+   
+    
     var letter = $(".box");
     var letter2 = $(".box2");
 
@@ -33,6 +41,7 @@ $(document).ready(function(){
     letter2.hide();
 
     var audio = new Audio("./assets/sounds/ding.wav");
+
       
     if (mobile.matches){
         //Mobile doesn't work unfortunately so we removed it

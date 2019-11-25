@@ -47,7 +47,16 @@
     
     z-index: 2;
 }
+p{
+    font-family: 'Bebas Neue', cursive;
+}
+.fas{
+    transition: transform .2s; 
+}
 
+.fas:hover{
+    transform: scale(1.2);
+}
 .fab{
     transition: transform .2s; 
 }
