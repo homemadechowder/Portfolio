@@ -180,7 +180,7 @@ function entrance(){
     button.click(function(){
         $(".pPage").hide();
         $(".contactForm").hide();
-        $(".lead").hide();
+        $(".lead").text("");
         switch (item){
             case "aboutme":
                 cards.not($(".abtMe")).fadeIn("slow");
@@ -244,6 +244,14 @@ function entrance(){
 
     $(".fa-linkedin").click(function(){
         window.open("https://www.linkedin.com/in/andrew-lu-2997b0109/","_blank");
+    })
+
+    $(".fa-facebook-square").click(function(){
+        window.open("https://www.facebook.com/SchismoGenesis","_blank");
+    })
+
+    $(".fa-github").click(function(){
+        window.open("https://www.github.com/homemadechowder","_blank");
     })
 
 
