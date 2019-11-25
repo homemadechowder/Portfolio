@@ -203,6 +203,8 @@ function entrance(){
         
     })
 
+
+    //Portfolio page links
     $(".pPage").click(function(){
         
         var project = $(this).attr("id");
@@ -214,9 +216,14 @@ function entrance(){
             case "rpg":
                 window.open("https://homemadechowder.github.io/Star_Wars_RPG/", "_blank");
                 break;
-
-
-        }
+            case "giftas":
+                window.open("https://github.com/homemadechowder/GifTastic/","_blank");
+                break;
+            case "zombie":
+                window.open("https://homemadechowder.github.io/Zombie-JS/","_blank");
+                break;
+        
+            }
     });
    
 
