@@ -27,10 +27,10 @@ $(document).ready(function(){
     
     
 
-    var sound = $(".foot").prepend("<i class='fas fa-volume-mute'><p>Click to turn volume on</p></i>");
+    var sound = $(".foot").prepend("<i class='icon fas fa-volume-mute'><p>Click to turn volume on</p></i>");
 
     $(".fa-volume-mute").on("click", function(){
-        $(".fa-volume-mute").replaceWith("<i class='fas fa-volume-up'><p>Now Scroll!</p></i>");
+        $(".fa-volume-mute").replaceWith("<i class='icon fas fa-volume-up'><p>Now Scroll!</p></i>");
     })
    
     
@@ -113,10 +113,11 @@ function entrance(){
             }
             console.log("unlocked");
             lockFlag = true;
-           
+            
             $("#border").show();
             $("#border2").show();
             //Scaled width
+          
             $("#border").animate({width: width+"px"},100);
             $("#border2").animate({width: width+"px"},100);
             
@@ -129,6 +130,7 @@ function entrance(){
                 letter2.fadeOut("slow");
                 $("#border").fadeOut("slow");
                 $("#border2").fadeOut("slow");
+                $(".icon").fadeOut("slow")
                 
             },700);
                        
@@ -139,6 +141,7 @@ function entrance(){
                 enable = false;
                 $("#main").fadeIn("slow");
                 $(".pPage").hide();
+                ;
             },1200);
 
            
