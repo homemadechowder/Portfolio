@@ -128,6 +128,7 @@ function entrance(){
                 letter2.hide();
                 enable = false;
                 $("#main").fadeIn("slow");
+                $(".pPage").hide();
             },1200);
 
            
@@ -147,7 +148,31 @@ function entrance(){
         
         cards.not($(this)).fadeOut("slow");
         item = $(this).attr("id");
+
         console.log(item);
+
+        switch(item){
+            case "aboutme":
+                
+                break;
+            case "portfolio":
+                
+                $(".pPage").show();
+                break;
+            case "contactme":
+              
+                break;
+            case "techdemo":
+               
+                break;     
+            case "blog":
+               
+                break;     
+            case "resume":
+                
+                break; 
+   
+        }
 
     })
 
@@ -155,7 +180,6 @@ function entrance(){
         
         switch (item){
             case "aboutme":
-                
                 cards.not($(".abtMe")).fadeIn("slow");
                 break;
             case "portfolio":
@@ -178,6 +202,22 @@ function entrance(){
         
         
     })
+
+    $(".pPage").click(function(){
+        
+        var project = $(this).attr("id");
+
+        switch (project){
+            case "project1":
+                window.open("https://homemadechowder.github.io/Project1/", "_blank");
+                break;
+            case "rpg":
+                window.open("https://homemadechowder.github.io/Star_Wars_RPG/", "_blank");
+                break;
+
+
+        }
+    });
    
 
 
