@@ -101,12 +101,15 @@ $(document).ready(function(){
                 entrance();
             }
             else{
+                setTimeout(ding, 1550);
                 setTimeout(entrance, 1900);
             }
             
         }
         
- 
+function ding(){
+    audio.play();
+}
 function entrance(){
             if (enable){
             audio.play();
@@ -121,9 +124,7 @@ function entrance(){
             $("#border").animate({width: width+"px"},100);
             $("#border2").animate({width: width+"px"},100);
             
-            if (enable){
-            audio.play();
-            }
+        
         border.addEventListener("transitionend", function(){
             setTimeout(function(){
                 letter.fadeOut("slow");
@@ -152,14 +153,14 @@ function entrance(){
     });  
     
     //End of Entrance page************************************************
-
+    var title = $(".display-4");
     var button = $(".btn");
     var cards = $(".cards");
     var item;
     
     cards.click(function(){
         
-        cards.not($(this)).fadeOut("slow");
+        cards.fadeOut("slow");
         item = $(this).attr("id");
 
         console.log(item);
@@ -169,8 +170,8 @@ function entrance(){
                 aboutmePage();
                 break;
             case "portfolio":
+                portPage();
                 
-                $(".pPage").show();
                 break;
             case "contactme":
                 contactPage();
@@ -193,25 +194,25 @@ function entrance(){
         $(".pPage").hide();
         $(".contactForm").hide();
         $(".lead").text("");
-        $(".display-4").text("Andrew's Homepage");
+        title.text("Andrew's Homepage");
         switch (item){
             case "aboutme":
-                cards.not($(".abtMe")).fadeIn("slow");
+                cards.fadeIn("slow");
                 break;
             case "portfolio":
-                cards.not($(".portfolio")).fadeIn("slow");
+                cards.fadeIn("slow");
                 break;
             case "contactme":
-                cards.not($(".contactme")).fadeIn("slow");
+                cards.fadeIn("slow");
                 break;
             case "techdemo":
-                cards.not($(".techdemo")).fadeIn("slow");
+                cards.fadeIn("slow");
                 break;     
             case "blog":
-                cards.not($(".blog")).fadeIn("slow");
+                cards.fadeIn("slow");
                 break;     
             case "resume":
-                cards.not($(".resume")).fadeIn("slow");
+                cards.fadeIn("slow");
                 break; 
    
         }
@@ -255,17 +256,28 @@ function entrance(){
             }
     });
    
+    var description = "With a Bachelor’s degree in Computer Engineering from U.C. Davis, I am focused on software and hardware engineering. I have in-depth education and training in computer programming and coding, object-oriented design (OOD), software testing and debugging, and working with hardware and software tools to ensure alignment with project goals. I excel at technical troubleshooting and problem solving as an analytical and critical thinker adept at solving problems, technical troubleshooting, and debugging. Moreover, I am a motivated and results-driven with the ability to quickly resolve identify and resolve issues.In addition, I excel at project and team collaboration with experience developing various games and software as part of a project team and as a team lead. I possess excellent cross-functional coordination skills as a team member at VMware. I have a talent for meeting deadlines, building relationships, and ensuring cross-functional communications. In sum, I possess an excellent combination of technical and communications knowledge with trilingual language skills, including fluency in English, Mandarin, and Japanese. I excel at quickly learning and applying new tools and technologies with the ability to work as a team and with little oversight as an independent worker."
+    
+    function aboutmePage(){
+        
+        $(".lead").text(description);
+    }
 
+    function portPage(){
+        $(".pPage").fadeIn("slow");
+        title.text("Portfolio");
+        title.append(" <i class='fas fa-laptop-code'></i>");
+        
+    }
+    
     function contactPage(){
         $(".display-4").text("Contact Me");
         $(".contactForm").show();
     }
 
-    var description = "With a Bachelor’s degree in Computer Engineering from U.C. Davis, I am focused on software and hardware engineering. I have in-depth education and training in computer programming and coding, object-oriented design (OOD), software testing and debugging, and working with hardware and software tools to ensure alignment with project goals. I excel at technical troubleshooting and problem solving as an analytical and critical thinker adept at solving problems, technical troubleshooting, and debugging. Moreover, I am a motivated and results-driven with the ability to quickly resolve identify and resolve issues.In addition, I excel at project and team collaboration with experience developing various games and software as part of a project team and as a team lead. I possess excellent cross-functional coordination skills as a team member at VMware. I have a talent for meeting deadlines, building relationships, and ensuring cross-functional communications. In sum, I possess an excellent combination of technical and communications knowledge with trilingual language skills, including fluency in English, Mandarin, and Japanese. I excel at quickly learning and applying new tools and technologies with the ability to work as a team and with little oversight as an independent worker."
-    function aboutmePage(){
-        
-        $(".lead").text(description);
-    }
+    
+
+   
 
 
     $(".fa-linkedin").click(function(){
