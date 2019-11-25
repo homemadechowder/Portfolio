@@ -1,6 +1,17 @@
+/* body, html{
+    height: 100%;
+} */
+.wrapper{
+    background-color :#a8dedd ;
+    height: 93.7vh;
+}
 .jumbotron{
-    background-color: #a8dedd ;
+    background-color: white ;
 
+}
+.container{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #border{
@@ -22,6 +33,7 @@
    
 }
 .cards{
+    background-color: white;
     font-family: 'Bebas Neue', cursive;
     height: 200px;
     text-align: center;
@@ -30,6 +42,7 @@
     
 }
 .pPage{
+    background-color: white;
     font-family: 'Bebas Neue', cursive;
     height: 200px;
     text-align: center;
@@ -87,7 +100,11 @@
     width: 1920px;
 
 }
+.foot{
+
+}
 .footer{
+    background-color: white;
     font-family: 'Bebas Neue', cursive;
     text-align: center;
     vertical-align: middle;
@@ -100,6 +117,7 @@
     width: 30px;
 }
 .box2{
+
     font-family: 'Bebas Neue', cursive;
     font-size: 500%;
     padding: 40px;
