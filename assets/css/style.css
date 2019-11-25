@@ -47,7 +47,10 @@
     
     z-index: 2;
 }
-p{
+.display-4{
+    font-family: 'Lato', sans-serif;
+}
+#sound{
     font-family: 'Bebas Neue', cursive;
 }
 .fas{

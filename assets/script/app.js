@@ -27,10 +27,10 @@ $(document).ready(function(){
     
     
 
-    var sound = $(".foot").prepend("<i class='icon fas fa-volume-mute'><p>Click to turn volume on</p></i>");
+    var sound = $(".foot").prepend("<i class='icon fas fa-volume-mute'><p id = 'sound'>Click to turn volume on</p></i>");
 
     $(".fa-volume-mute").on("click", function(){
-        $(".fa-volume-mute").replaceWith("<i class='icon fas fa-volume-up'><p>Now Scroll!</p></i>");
+        $(".fa-volume-mute").replaceWith("<i class='icon fas fa-volume-up'><p id = 'sound'>Now Scroll!</p></i>");
     })
    
     
@@ -193,6 +193,7 @@ function entrance(){
         $(".pPage").hide();
         $(".contactForm").hide();
         $(".lead").text("");
+        $(".display-4").text("Andrew's Homepage");
         switch (item){
             case "aboutme":
                 cards.not($(".abtMe")).fadeIn("slow");
