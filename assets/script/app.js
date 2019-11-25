@@ -4,6 +4,7 @@ var unlock2 = "";
 var limit = [];
 var limit2 = [];
 var lockFlag = false;
+var enable = true;
 var border = document.getElementById("border");
 var border2 = document.getElementById("border2");
 var line = document.querySelector(".box");
@@ -97,18 +98,21 @@ $(document).ready(function(){
         
  
 function entrance(){
+            if (enable){
+            audio.play();
+            }
             console.log("unlocked");
             lockFlag = true;
-            letter.hide();
-            letter2.hide();
+           
             $("#border").show();
             $("#border2").show();
             //Scaled width
             $("#border").animate({width: width+"px"},100);
             $("#border2").animate({width: width+"px"},100);
             
+            if (enable){
             audio.play();
-        
+            }
         border.addEventListener("transitionend", function(){
             setTimeout(function(){
                 letter.fadeOut("slow");
@@ -120,6 +124,9 @@ function entrance(){
                        
             setTimeout(function(){
                 $("#lock").hide();
+                letter.hide();
+                letter2.hide();
+                enable = false;
                 $("#main").fadeIn("slow");
             },1200);
 
@@ -132,10 +139,44 @@ function entrance(){
     
     //End of Entrance page************************************************
 
+    var button = $(".btn");
     var cards = $(".cards");
-
+    var item;
+    
     cards.click(function(){
-        window.location = "http://google.com";
+        
+        cards.not($(this)).fadeOut("slow");
+        item = $(this).attr("id");
+        console.log(item);
+
+    })
+
+    button.click(function(){
+        
+        switch (item){
+            case "aboutme":
+                
+                cards.not($(".abtMe")).fadeIn("slow");
+                break;
+            case "portfolio":
+                cards.not($(".portfolio")).fadeIn("slow");
+                break;
+            case "contactme":
+                cards.not($(".contactme")).fadeIn("slow");
+                break;
+            case "techdemo":
+                cards.not($(".techdemo")).fadeIn("slow");
+                break;     
+            case "blog":
+                cards.not($(".blog")).fadeIn("slow");
+                break;     
+            case "resume":
+                cards.not($(".resume")).fadeIn("slow");
+                break; 
+   
+        }
+        
+        
     })
    
 
