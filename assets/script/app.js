@@ -251,7 +251,9 @@ function entrance(){
             case "shallow":
                 window.open("https://github.com/homemadechowder/ShallowWaterSimulations","_blank");
                 break;
-                
+            case "liri":
+                window.open("https://github.com/homemadechowder/LIRI");
+                break;
         
             }
     });
