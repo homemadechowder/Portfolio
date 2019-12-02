@@ -79,11 +79,11 @@
 .icon:hover{
     transform: scale(1.2);
 }
-.fab{
+.footic{
     transition: transform .2s; 
 }
 
-.fab:hover{
+.footic:hover{
     transform: scale(1.2);
     
 }
